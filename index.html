@@ -6,49 +6,94 @@
 <title>Rohit Exam Portal</title>
 
 <style>
-body{
+*{
 margin:0;
-font-family:Arial,sans-serif;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
 background:linear-gradient(135deg,#0f172a,#1e3a8a);
 color:white;
-text-align:center;
 }
 
 header{
 padding:20px;
-font-size:32px;
-font-weight:bold;
+text-align:center;
 background:#111827;
+box-shadow:0 3px 10px rgba(0,0,0,.3);
 }
 
-.container{
-margin-top:60px;
+header h1{
+font-size:35px;
 }
 
-h2{
-font-size:28px;
+.hero{
+padding:70px 20px;
+text-align:center;
+}
+
+.hero h2{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+max-width:700px;
+margin:auto;
+line-height:1.7;
+}
+
+.buttons{
+margin-top:40px;
 }
 
 button{
-width:250px;
-padding:15px;
+padding:15px 35px;
 margin:10px;
-font-size:18px;
 border:none;
 border-radius:10px;
-background:#facc15;
+font-size:18px;
 cursor:pointer;
-font-weight:bold;
+transition:.3s;
+}
+
+.student{
+background:#22c55e;
+color:white;
+}
+
+.admin{
+background:#2563eb;
+color:white;
 }
 
 button:hover{
-background:#eab308;
+transform:scale(1.05);
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:40px;
+}
+
+.card{
+background:white;
+color:#111;
+padding:25px;
+border-radius:15px;
+text-align:center;
 }
 
 footer{
-margin-top:80px;
-padding:15px;
+text-align:center;
+padding:20px;
 background:#111827;
+margin-top:30px;
 }
 </style>
 
@@ -57,36 +102,65 @@ background:#111827;
 <body>
 
 <header>
-🏆 Rohit Exam Portal
+<h1>🎓 Rohit Online Exam Portal</h1>
 </header>
 
-<div class="container">
-
-<h2>Welcome to Rohit Exam Portal</h2>
+<section class="hero">
+<h2>Welcome to the Exam Portal</h2>
 
 <p>
-AI Powered Online Examination System
+Practice tests, competitive exams, instant results,
+and secure online assessments from anywhere.
 </p>
 
-<button>👨‍🎓 Student Login</button>
-
-<br>
-
-<button>👨‍💼 Admin Login</button>
-
-<br>
-
-<button>📝 Join Exam</button>
-
-<br>
-
-<button>🏆 Leaderboard</button>
-
+<div class="buttons">
+<button class="student" onclick="student()">Student Login</button>
+<button class="admin" onclick="admin()">Admin Login</button>
 </div>
 
+</section>
+
+<section class="features">
+
+<div class="card">
+<h3>📝 Online Tests</h3>
+<p>Attend exams anytime.</p>
+</div>
+
+<div class="card">
+<h3>⏱ Live Timer</h3>
+<p>Automatic countdown timer.</p>
+</div>
+
+<div class="card">
+<h3>📊 Instant Results</h3>
+<p>Get score immediately.</p>
+</div>
+
+<div class="card">
+<h3>🔒 Secure</h3>
+<p>Safe and reliable exam system.</p>
+</div>
+
+</section>
+
 <footer>
-Made by Rohit ❤️
+
+<h3>Developed by Rohit Kumar Roy</h3>
+
 </footer>
+
+<script>
+
+function student(){
+alert("Student Dashboard Coming Soon");
+}
+
+function admin(){
+alert("Admin Dashboard Coming Soon");
+}
+
+</script>
 
 </body>
 </html>
