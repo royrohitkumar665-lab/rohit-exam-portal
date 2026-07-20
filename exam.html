@@ -1,1 +1,115 @@
-h
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Examination</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div class="logo">
+🎓 Rohit Exam Portal
+</div>
+
+<div class="student">
+
+<div>Name: <span id="studentName">Student</span></div>
+
+<div>Roll: <span id="studentRoll">0000</span></div>
+
+</div>
+
+<div class="timer">
+
+⏰ Time Left:
+<span id="timer">60:00</span>
+
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="left-panel">
+
+<h2 id="questionNumber">
+Question 1 of 100
+</h2>
+
+<div id="questionBox">
+
+Loading Question...
+
+</div>
+
+<div id="options">
+
+<label class="option">
+<input type="radio" name="answer">
+<span id="optionA"></span>
+</label>
+
+<label class="option">
+<input type="radio" name="answer">
+<span id="optionB"></span>
+</label>
+
+<label class="option">
+<input type="radio" name="answer">
+<span id="optionC"></span>
+</label>
+
+<label class="option">
+<input type="radio" name="answer">
+<span id="optionD"></span>
+</label>
+
+</div>
+
+<div class="buttons">
+
+<button id="previousBtn">
+Previous
+</button>
+
+<button id="reviewBtn">
+Mark for Review
+</button>
+
+<button id="nextBtn">
+Save & Next
+</button>
+
+</div>
+
+</div>
+
+<div class="right-panel">
+
+<h3>Question Palette</h3>
+
+<div id="palette">
+
+<!-- Questions 1–100 will appear here -->
+
+</div>
+
+<button id="submitExam">
+Submit Exam
+</button>
+
+</div>
+
+</div>
+
+<script src="questions.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
