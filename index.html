@@ -153,11 +153,34 @@ and secure online assessments from anywhere.
 <script>
 
 function student(){
-alert("Student Dashboard Coming Soon");
+document.getElementById("loginBox").style.display="flex";
 }
 
 function admin(){
-alert("Admin Dashboard Coming Soon");
+alert("Admin Panel will be added in Stage 3");
+}
+
+function closeLogin(){
+document.getElementById("loginBox").style.display="none";
+}
+
+function loginStudent(){
+
+let name=document.getElementById("name").value.trim();
+let roll=document.getElementById("roll").value.trim();
+
+if(name==="" || roll===""){
+alert("Please fill all fields");
+return;
+}
+
+localStorage.setItem("studentName",name);
+localStorage.setItem("studentRoll",roll);
+
+alert("Login Successful");
+
+window.location.href="exam.html";
+
 }
 
 </script>
