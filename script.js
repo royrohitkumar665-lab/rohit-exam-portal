@@ -131,9 +131,14 @@ score++;
 
 }
 
-alert(
-"Exam Submitted!\n\nScore : "+score+" / "+questions.length
-);
+// Save result
+localStorage.setItem("correct", score);
+localStorage.setItem("total", questions.length);
+
+// Open Result Page
+window.location.href = "result.html";
+
+};
 
 };
 
