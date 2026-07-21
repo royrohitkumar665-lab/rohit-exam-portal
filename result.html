@@ -1,1 +1,146 @@
-r
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Result</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f4f7fb;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.result-box{
+
+background:white;
+padding:30px;
+width:90%;
+max-width:500px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,0,0,.2);
+
+}
+
+h1{
+
+text-align:center;
+color:#2563eb;
+
+}
+
+table{
+
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+
+}
+
+td{
+
+padding:10px;
+border-bottom:1px solid #ddd;
+
+}
+
+button{
+
+width:100%;
+padding:15px;
+margin-top:25px;
+border:none;
+background:#2563eb;
+color:white;
+font-size:18px;
+border-radius:8px;
+cursor:pointer;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="result-box">
+
+<h1>🎓 Rohit Exam Portal</h1>
+
+<h2 style="text-align:center;">Exam Result</h2>
+
+<table>
+
+<tr>
+<td>Name</td>
+<td id="name"></td>
+</tr>
+
+<tr>
+<td>Roll Number</td>
+<td id="roll"></td>
+</tr>
+
+<tr>
+<td>Total Questions</td>
+<td id="total"></td>
+</tr>
+
+<tr>
+<td>Correct Answers</td>
+<td id="correct"></td>
+</tr>
+
+<tr>
+<td>Score</td>
+<td id="score"></td>
+</tr>
+
+<tr>
+<td>Percentage</td>
+<td id="percentage"></td>
+</tr>
+
+</table>
+
+<button onclick="window.location.href='index.html'">
+Back to Home
+</button>
+
+</div>
+
+<script>
+
+document.getElementById("name").innerText=
+localStorage.getItem("studentName");
+
+document.getElementById("roll").innerText=
+localStorage.getItem("studentRoll");
+
+document.getElementById("total").innerText=
+localStorage.getItem("total");
+
+document.getElementById("correct").innerText=
+localStorage.getItem("correct");
+
+document.getElementById("score").innerText=
+localStorage.getItem("correct")+" / "+
+localStorage.getItem("total");
+
+let percentage=(localStorage.getItem("correct")/
+localStorage.getItem("total"))*100;
+
+document.getElementById("percentage").innerText=
+percentage.toFixed(2)+"%";
+
+</script>
+
+</body>
+</html>
