@@ -74,4 +74,39 @@ document.getElementById("previousBtn").onclick = function () {
 };
 
 // Load First Question
-loadQuestion();
+loadQuestion();// ===============================
+// Part 2 : 60 Minute Timer
+// ===============================
+
+let totalTime = 60 * 60; // 60 minutes in seconds
+
+function startTimer() {
+
+    const timer = document.getElementById("timer");
+
+    const interval = setInterval(function () {
+
+        let minutes = Math.floor(totalTime / 60);
+        let seconds = totalTime % 60;
+
+        timer.innerText =
+            String(minutes).padStart(2, "0") + ":" +
+            String(seconds).padStart(2, "0");
+
+        if (totalTime <= 0) {
+
+            clearInterval(interval);
+
+            alert("Time is over! Exam will be submitted.");
+
+            document.getElementById("submitExam").click();
+
+        }
+
+        totalTime--;
+
+    }, 1000);
+
+}
+
+startTimer();
