@@ -5,157 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rohit Exam Portal</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
-}
-
-body{
-background:linear-gradient(135deg,#0f172a,#1e3a8a);
-color:white;
-}
-
-header{
-padding:20px;
-text-align:center;
-background:#111827;
-box-shadow:0 3px 10px rgba(0,0,0,.3);
-}
-
-header h1{
-font-size:35px;
-}
-
-.hero{
-padding:70px 20px;
-text-align:center;
-}
-
-.hero h2{
-font-size:42px;
-margin-bottom:15px;
-}
-
-.hero p{
-font-size:18px;
-max-width:700px;
-margin:auto;
-line-height:1.7;
-}
-
-.buttons{
-margin-top:40px;
-}
-
-button{
-padding:15px 35px;
-margin:10px;
-border:none;
-border-radius:10px;
-font-size:18px;
-cursor:pointer;
-transition:.3s;
-}
-
-.student{
-background:#22c55e;
-color:white;
-}
-
-.admin{
-background:#2563eb;
-color:white;
-}
-
-button:hover{
-transform:scale(1.05);
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:40px;
-}
-
-.card{
-background:white;
-color:#111;
-padding:25px;
-border-radius:15px;
-text-align:center;
-}
-
-footer{
-text-align:center;
-padding:20px;
-background:#111827;
-margin-top:30px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<header>
-<h1>🎓 Rohit Online Exam Portal</h1>
+<header class="home-header">
+    <h1>🎓 Rohit Exam Portal</h1>
+    <p>Professional Online Examination System</p>
 </header>
 
-<section class="hero">
-<h2>Welcome to the Exam Portal</h2>
-
-<p>
-Practice tests, competitive exams, instant results,
-and secure online assessments from anywhere.
-</p>
-
-<div class="buttons">
-<button class="student" onclick="student()">Student Login</button>
-<button class="admin" onclick="admin()">Admin Login</button>
-</div>
-
-</section>
-
-<section class="features">
+<div class="home-container">
 
 <div class="card">
-<h3>📝 Online Tests</h3>
-<p>Attend exams anytime.</p>
+
+<h2>Student Login</h2>
+
+<input type="text" id="studentNameInput" placeholder="Enter Name">
+
+<input type="text" id="studentRollInput" placeholder="Enter Roll Number">
+
+<button onclick="studentLogin()">
+Start Exam
+</button>
+
 </div>
 
 <div class="card">
-<h3>⏱ Live Timer</h3>
-<p>Automatic countdown timer.</p>
-</div>
 
-<div class="card">
-<h3>📊 Instant Results</h3>
-<p>Get score immediately.</p>
-</div>
+<h2>Admin Login</h2>
 
-<div class="card">
-<h3>🔒 Secure</h3>
-<p>Safe and reliable exam system.</p>
-</div>
+<input type="password" id="adminPassword" placeholder="Admin Password">
 
-</section>
-<div id="loginBox" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);justify-content:center;align-items:center;">
-
-<div style="background:white;color:black;padding:30px;border-radius:15px;width:90%;max-width:350px;">
-
-<h2 style="text-align:center;">Student Login</h2>
-
-<input id="name" type="text" placeholder="Full Name" style="width:100%;padding:12px;margin-top:15px;">
-
-<input id="roll" type="text" placeholder="Roll Number" style="width:100%;padding:12px;margin-top:15px;">
-
-<button onclick="loginStudent()" style="width:100%;margin-top:20px;background:#22c55e;color:white;">Login</button>
-
-<button onclick="closeLogin()" style="width:100%;margin-top:10px;background:red;color:white;">Close</button>
+<button onclick="adminLogin()">
+Login
+</button>
 
 </div>
 
@@ -163,44 +48,11 @@ and secure online assessments from anywhere.
 
 <footer>
 
-<h3>Developed by Rohit Kumar Roy</h3>
+© 2026 Rohit Exam Portal
 
 </footer>
 
-<script>
-
-function student(){
-document.getElementById("loginBox").style.display="flex";
-}
-
-function admin(){
-alert("Admin Panel will be added in Stage 3");
-}
-
-function closeLogin(){
-document.getElementById("loginBox").style.display="none";
-}
-
-function loginStudent(){
-
-let name=document.getElementById("name").value.trim();
-let roll=document.getElementById("roll").value.trim();
-
-if(name==="" || roll===""){
-alert("Please fill all fields");
-return;
-}
-
-localStorage.setItem("studentName",name);
-localStorage.setItem("studentRoll",roll);
-
-alert("Login Successful");
-
-window.location.href="exam.html";
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
