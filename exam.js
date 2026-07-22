@@ -111,7 +111,38 @@ function startTimer() {
 
             alert("Time is over! Exam will be submitted.");
 
-            document.getElementById("submitExam").click();
+            document.getElementById("submitExam").onclick = function () {
+
+    saveAnswer();
+
+    let correct = 0;
+    let attempted = 0;
+
+    for (let i = 0; i < questions.length; i++) {
+
+        if (selectedAnswers[i] !== null) {
+            attempted++;
+        }
+
+        if (selectedAnswers[i] === questions[i].answer) {
+            correct++;
+        }
+    }
+
+    const wrong = attempted - correct;
+    const unattempted = questions.length - attempted;
+    const percentage = ((correct / questions.length) * 100).toFixed(2);
+
+    localStorage.setItem("correct", correct);
+    localStorage.setItem("attempted", attempted);
+    localStorage.setItem("wrong", wrong);
+    localStorage.setItem("unattempted", unattempted);
+    localStorage.setItem("percentage", percentage);
+    localStorage.setItem("total", questions.length);
+
+    window.location.href = "result.html";
+
+};
 
         }
 
