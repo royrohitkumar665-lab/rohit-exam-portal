@@ -13,6 +13,7 @@ document.getElementById("studentRoll").innerText = studentRoll;
 // Exam Variables
 let currentQuestion = 0;
 let selectedAnswers = new Array(questions.length).fill(null);
+let reviewQuestions = new Array(questions.length).fill(false);
 
 // Load Question
 function loadQuestion() {
