@@ -110,3 +110,70 @@ function startTimer() {
 }
 
 startTimer();
+// ===============================
+// Part 3 : Question Palette
+// ===============================
+
+const palette = document.getElementById("palette");
+
+function createPalette() {
+
+    palette.innerHTML = "";
+
+    for (let i = 0; i < questions.length; i++) {
+
+        let btn = document.createElement("button");
+
+        btn.innerText = i + 1;
+
+        btn.className = "palette-btn";
+
+        btn.onclick = function () {
+
+            saveAnswer();
+
+            currentQuestion = i;
+
+            loadQuestion();
+
+            updatePalette();
+
+        };
+
+        palette.appendChild(btn);
+
+    }
+
+    updatePalette();
+
+}
+
+function updatePalette() {
+
+    const buttons = document.querySelectorAll(".palette-btn");
+
+    buttons.forEach((btn, index) => {
+
+        btn.style.background = "#2563eb";
+        btn.style.color = "white";
+
+        if (selectedAnswers[index] !== null) {
+            btn.style.background = "green";
+        }
+
+    });
+
+    buttons[currentQuestion].style.background = "orange";
+
+}
+
+// Refresh palette whenever a question loads
+const oldLoadQuestion = loadQuestion;
+
+loadQuestion = function () {
+    oldLoadQuestion();
+    updatePalette();
+};
+
+createPalette();
+loadQuestion();
