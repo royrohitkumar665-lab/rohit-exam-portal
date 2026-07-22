@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Questions</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="home-header">
+<h1>📚 Question Manager</h1>
+</header>
+
+<div class="card" style="max-width:700px;margin:30px auto;">
+
+<input id="question" placeholder="Enter Question">
+
+<input id="option1" placeholder="Option A">
+
+<input id="option2" placeholder="Option B">
+
+<input id="option3" placeholder="Option C">
+
+<input id="option4" placeholder="Option D">
+
+<input id="answer" type="number" min="1" max="4" placeholder="Correct Option (1-4)">
+
+<button onclick="addQuestion()">
+Add Question
+</button>
+
+<hr>
+
+<h3>Saved Questions</h3>
+
+<div id="questionList"></div>
+
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>
