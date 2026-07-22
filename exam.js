@@ -112,6 +112,8 @@ function startTimer() {
             alert("Time is over! Exam will be submitted.");
 
             document.getElementById("submitExam").onclick = function () {
+    alert("Submit button is working!");
+};
 
     saveAnswer();
 
