@@ -73,6 +73,17 @@ document.getElementById("previousBtn").onclick = function () {
     }
 
 };
+// ===============================
+// Mark for Review
+// ===============================
+
+document.getElementById("reviewBtn").onclick = function () {
+
+    reviewQuestions[currentQuestion] = !reviewQuestions[currentQuestion];
+
+    updatePalette();
+
+};
 
 // Load First Question
 loadQuestion();// ===============================
