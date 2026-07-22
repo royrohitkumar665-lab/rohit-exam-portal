@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Firebase Test</title>
+</head>
+<body>
+
+<h2>Firebase Connection Test</h2>
+
+<button id="testBtn">Test Firebase</button>
+
+<p id="status">Not Connected</p>
+
+<script type="module">
+
+import { db } from "./firebase.js";
+import {
+addDoc,
+collection
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+document.getElementById("testBtn").onclick = async function(){
+
+try{
+
+await addDoc(collection(db,"test"),{
+
+message:"Firebase Connected",
+time:new Date()
+
+});
+
+document.getElementById("status").innerHTML="✅ Firebase Connected Successfully";
+
+}catch(error){
+
+document.getElementById("status").innerHTML=error.message;
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
