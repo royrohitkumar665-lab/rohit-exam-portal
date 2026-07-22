@@ -169,9 +169,12 @@ function updatePalette() {
         btn.style.background = "#2563eb";
         btn.style.color = "white";
 
-        if (selectedAnswers[index] !== null) {
-            btn.style.background = "green";
-        }
+        if (reviewQuestions[index]) {
+    btn.style.background = "purple";
+}
+else if (selectedAnswers[index] !== null) {
+    btn.style.background = "green";
+}
 
     });
 
