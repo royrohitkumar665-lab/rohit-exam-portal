@@ -83,3 +83,11 @@ color:white;
 text-align:center;
 padding:15px;
 }
+.palette-btn{
+width:45px;
+height:45px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
