@@ -23,9 +23,9 @@ function adminLogin(){
 
     let password = document.getElementById("adminPassword").value;
 
-    if(password === "admin123"){
-        alert("Admin Panel will be available in the next version.");
-    }else{
+ if(password === "admin123"){
+    window.location.href = "admin.html";
+}  else{
         alert("Incorrect Admin Password.");
     }
 
