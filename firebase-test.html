@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firebase Test</title>
 </head>
 <body>
@@ -15,10 +13,28 @@
 
 <script type="module">
 
-alert("JavaScript Loaded");
+import { db } from "./firebase.js";
+import { addDoc, collection } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
-document.getElementById("testBtn").onclick = function () {
-    alert("Button Working");
+alert("Firebase Loaded");
+
+document.getElementById("testBtn").onclick = async function () {
+
+    try {
+
+        await addDoc(collection(db, "test"), {
+            message: "Hello Firebase"
+        });
+
+        document.getElementById("status").innerText = "✅ Connected";
+
+    } catch (e) {
+
+        alert(e.message);
+        document.getElementById("status").innerText = e.message;
+
+    }
+
 };
 
 </script>
