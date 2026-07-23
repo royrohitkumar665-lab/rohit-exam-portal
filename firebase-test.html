@@ -30,10 +30,14 @@ document.getElementById("testBtn").onclick = async function () {
 
     } catch (e) {
 
-        alert(e.message);
-        document.getElementById("status").innerText = e.message;
+    alert(
+        "Code: " + e.code + "\n\nMessage: " + e.message
+    );
 
-    }
+    document.getElementById("status").innerText =
+        e.code + " : " + e.message;
+
+}
 
 };
 
